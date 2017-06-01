@@ -1,0 +1,15 @@
+# My docker-compose.yml file
+
+# Tomcat 8.5.15
+tomcat:
+  image: tomcat-server
+  container_name: tomcat-server
+  #network_mode: default
+  extra_hosts:
+  - my_database:192.168.15.224
+  environment:
+  - TOMCAT_PASS=4dm1n.pwd
+  - JAVA_OPTS=-Xms1024m -Xmx2048m -XX:MaxPermSize=256m
+  ports:
+  - 8080:8080
+  
